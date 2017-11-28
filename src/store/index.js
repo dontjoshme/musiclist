@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import { applyMiddleware, combineReducers, createStore, compose } from 'redux';
 import { logger } from 'redux-logger';
 
 import DevTools from '../components/shared/DevTools';

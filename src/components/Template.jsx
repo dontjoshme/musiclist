@@ -11,7 +11,7 @@ export default function Template(props) {
   return (
     <Router>
       <div className="wrapper">
-        <Header username="anonymous" authentication={authentication} />
+        <Header authentication={authentication} />
         <section className="page-content container-fluid">
           <Route exact path="/" component={HomePage} />
           <Route exact path="/account/login" component={LoginPage} />

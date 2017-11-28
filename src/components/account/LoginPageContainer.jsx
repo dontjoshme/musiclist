@@ -51,23 +51,23 @@ export class LoginPageContainer extends React.Component {
         credentials: 'same-origin',
       },
     )
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        }
-        return null;
-      })
-      .then((json) => {
-        if (json) {
-          loginSuccessAction(json);
-          this.setState({ redirect: true });
-        } else {
-          loginFailureAction(new Error('Authentication Failed'));
-        }
-      })
-      .catch((error) => {
-        loginFailureAction(new Error(error));
-      });
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      }
+      return null;
+    })
+    .then((json) => {
+      if (json) {
+        loginSuccessAction(json);
+        this.setState({ redirect: true });
+      } else {
+        loginFailureAction(new Error('Authentication Failed'));
+      }
+    })
+    .catch((error) => {
+      loginFailureAction(new Error(error));
+    });
 
     // turn off spinner
     decrementProgressAction();

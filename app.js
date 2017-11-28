@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const expressSession = require('express-session')({
-  secret: 'some random string goes here',
+  secret: 'random strings here are good',
   resave: false,
   saveUninitialized: false,
 });
@@ -17,6 +17,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.babel');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+
 const User = require('./models/user');
 
 const index = require('./routes/index');
@@ -26,7 +27,7 @@ const authentication = require('./routes/api/authentication');
 
 const app = express();
 
-// Connect Mongoose
+// Connect to Mongoose
 mongoose.connect('mongodb://localhost/musiclist');
 
 // view engine setup
@@ -34,7 +35,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -62,15 +63,13 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use('/api', api);
 app.use('/api/users', users);
-app.use('/*', index);
 app.use('/api/authentication', authentication);
+app.use('/*', index);
 
 // Configure Passport
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

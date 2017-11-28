@@ -10,6 +10,7 @@ export default class Header extends React.Component {
     super(props);
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
+
     this.state = {
       isOpen: false,
     };

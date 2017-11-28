@@ -2,11 +2,12 @@ header {
   margin-bottom: 1rem;
 }
 
-.form-control::-webkit-input-placeholder { color: #EEE; }
-.form-control::-moz-placeholder { color: #EEE; }
-.form-control:-ms-input-placeholder {color: #EEE; }
-.form-control:-moz-placeholder {color: #EEE; }
+.form-control::-webkit-input-placeholder { color: #EEE }
+.form-control::-moz-placeholder { color: #EEE }
+.form-control:-ms-input-placeholder { color: #EEE }
+.form-control:-moz-placeholder { color: #EEE }
 
+/* Spinner */
 .loader-wrapper {
   overflow: hidden;
   position: fixed;
@@ -66,5 +67,5 @@ header {
         transform: rotate(360deg);
       }
     }
-  }
-}
+  } /* loader-box */
+} /* loader-wrapper */

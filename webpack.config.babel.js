@@ -37,7 +37,7 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css?$/,
+        test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: 'css-loader',
@@ -76,5 +76,5 @@ if (process.env.NODE_ENV !== 'production') {
     'react-hot-loader/babel',
     'webpack-hot-middleware/client',
   );
-  module.exports.plugins.push(new webpack.HotModuleReplacementPlugin());
+  module.exports.plugins.unshift(new webpack.HotModuleReplacementPlugin());
 }

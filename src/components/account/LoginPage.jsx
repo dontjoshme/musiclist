@@ -22,7 +22,7 @@ export default class LoginPage extends React.Component {
     this.setState({ email: e.target.value });
   }
 
-  // update stat as password value changes
+  // update state as password value changes
   handlePasswordChange(e) {
     this.setState({ password: e.target.value });
   }
@@ -37,26 +37,25 @@ export default class LoginPage extends React.Component {
     return (
       <div className="row justify-content-center">
         <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-
           <Form>
             <FormGroup>
-              <Label for="userEmail">Email</Label>
+              <Label for="exampleEmail">Email</Label>
               <Input
                 type="email"
                 name="email"
-                id="userEmail"
-                placehoder="noreply@musiclist.com"
+                id="exampleEmail"
+                placeholder="noreply@musiclist.com"
                 value={this.state.email}
                 onChange={this.handleEmailChange}
               />
             </FormGroup>
             <FormGroup>
-              <Label for="userPassword">Password</Label>
+              <Label for="examplePassword">Password</Label>
               <Input
                 type="password"
                 name="password"
-                id="userPassword"
-                placehoder="password"
+                id="examplePassword"
+                placeholder="password"
                 value={this.state.password}
                 onChange={this.handlePasswordChange}
               />
